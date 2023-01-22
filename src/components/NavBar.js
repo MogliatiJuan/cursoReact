@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 const NavBar = (props) => {
@@ -9,13 +10,15 @@ const NavBar = (props) => {
         return (
         <Navbar bg="light" expand="lg">
             <Container>
-            <Navbar.Brand href="#home">Crypto Club</Navbar.Brand>
+            <Link to="/">Crypto Club</Link>
+            {/* <Navbar.Brand href="/">Crypto Club</Navbar.Brand> */}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#productos">Productos</Nav.Link>
-                    <Nav.Link href="#contacto">Contacto</Nav.Link>
+                    <Link to="/category/men's clothing">Ropa de hombre</Link>
+                    <Link to="/category/women's clothing">Ropa de mujer</Link>
+                    <Link to="/category/jewelery">Joyeria</Link>
+                    <Link to="/category/electronics">Electronica</Link>
                 </Nav>
             </Navbar.Collapse>
             </Container>

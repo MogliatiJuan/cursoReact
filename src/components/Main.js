@@ -1,9 +1,16 @@
+import { Route, Routes } from 'react-router-dom'
+import ItemDetailContainer from './ItemDetailContainer'
+// import ItemDetailContainer from './ItemDetailContainer'
 import ItemListContainer from './ItemListContainer'
 
 const Main = () => {
   return (
     <main>
-        <ItemListContainer greeting="Hola, proximamente tendras todos los servicios de Crypto Club a la vista."/>
+      <Routes>
+        <Route path="/" element={<ItemListContainer/>}/>
+        <Route path="/category/:category" element={<ItemListContainer/>}/>
+        <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+      </Routes>
     </main>
   )
 }

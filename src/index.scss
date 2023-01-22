@@ -13,7 +13,30 @@ body {
     header {
   
       .navbar {
-    
+        margin-right: 0 !important;
+        background-color: #829141a3  !important;
+
+        .container{
+
+          a{
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(73, 61, 61);
+          }
+
+          .navbar-collapse {
+            flex-direction: row-reverse;
+            
+            .navbar-nav{
+              margin-right: 0 !important;
+
+              a {
+                margin: 0 7px;
+              }
+            }
+          }
+        }
         .material-icons{
           margin-right: 15px;
         }
@@ -37,28 +60,87 @@ body {
       flex-grow: 1;
     
       .greeting{
-        height: 100%;
         display: flex;
-        flex-direction: column;
+        flex-flow: row wrap;
         justify-content: center;
         align-items: center;
+          
+          > article{
+            flex: 0 0 400px;
+
+            .card{
+              margin: 20px 0;
+              padding: 10px;
+              height: 400px;
+              border-radius: 20px;
+              box-shadow: 0px 0px 11px 0px rgb(129, 127, 127);
+
+              > img {
+                aspect-ratio: 3/2;
+                object-fit: contain;
+              }
+
+              .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .card-title{
+                  max-height: 75px;
+                  overflow: hidden;
+                }
+
+                a {
+                  color: rgb(24, 20, 20);
+                }
+              }
+            }
+          }
+        
     
         p {
           margin: 10px;
         }
       }
+
+      .detalleProducto{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+          margin: 20px 0;
+          width: 30rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border-radius: 20px;
+          box-shadow: 0px 0px 11px 0px rgb(129, 127, 127);
+          
+
+          > img {
+            padding: 10px 0 0 0;
+            max-width: 300px;
+            max-height: 300px;
+          }
+        }
+      }
     }
   
     footer {
-  
+
       .navbar {
-    
+        background-color: #829141a3 !important;
+        
         .container{
     
           .navFooter{
             flex-direction: column;
           
             .navbar-nav{
+              margin-right: 0 !important;
               flex-direction: column;
               align-items: center;
           
@@ -78,21 +160,6 @@ body {
       }
     }
   }
-}
-
-html, body, #root {
-  height: 100%;
-}
-
-.navbar {
-  background-color: #b9b9b9a3  !important;
-}
-.navbar-expand-lg .navbar-collapse {
-  flex-direction: row-reverse;
-}
-
-.navbar-expand-lg .navbar-nav{
-  margin-right: 0 !important;
 }
 
 
