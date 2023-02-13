@@ -1,14 +1,13 @@
-import NavBar from './NavBar'
+import NavBar from "./NavBar";
 
 const Header = () => {
-
-    const isHeader = true
+  const isHeader = true;
 
   return (
-        <header className='header'>
-            <NavBar isHeader={isHeader}/>
-        </header>
-  )
-}
+    <header className="header">
+      <NavBar isHeader={isHeader} />
+    </header>
+  );
+};
 
-export default Header
+export default Header;

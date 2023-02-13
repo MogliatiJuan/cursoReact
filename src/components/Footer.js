@@ -1,13 +1,13 @@
-import NavBar from './NavBar'
+import NavBar from "./NavBar";
 
 const Footer = () => {
   return (
     <>
-        <footer>
-            <NavBar />
-        </footer>
+      <footer>
+        <NavBar />
+      </footer>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
