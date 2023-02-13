@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Documentación de la Tienda de E-Commerce en React JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hola! En este documento encontrarás la información relacionada a la tienda generada en base a React, siendo el Proyecto Final de presentación de React JS brindado por *CoderHouse*.
 
-## Available Scripts
+## Descripción de la app
 
-In the project directory, you can run:
+* En su página principal se encuentra una lista completa de los productos disponibles en la tienda.
+* En cada producto puede encontrar su nombre, precio y si le interesa algún producto en particular puede ver más información sobre él, con solo clickear en donde se encuentra subrayado.
+* Si solo desea ver una categoría específica de productos, desde la barra de navegación tiene la posibilidad de filtrar por categoría.
+* Sea el caso que le interese un producto, clickeando en su detalle encontrará más información del mismo, como una descripción detallada, stock y correspondiente categoria.
+* Puede añadir productos a su carrito en cada detalle de los productos, colocando la cantidad que desee.
+* Una vez haya seleccionado sus productos, puede ir a su carrito de compras clickeando en el icono del carrito, situado arriba-derecha de la página. Este le llevará a todo lo que deseó comprar.
+* En el carrito encontrará un formulario donde tendrá que completar sus datos de manera correcta, sino no podrá enviar su pedido. Cabe aclarar que se pide reingreso de correo en uno de los campos.
+* Una vez complete todos los datos, clickee en "Enviar Pedido" y su pedido será enviado a la tienda, que le brindará su ID de compra, sus datos y un ID de seguimiento.
 
-### `npm start`
+## Tecnologías utilizadas
++ **Bootstrap** para añadir estilos al sitio.
++ **Firebase** para la gestión de datos.
++ **React-Bootstrap** para la creación de componentes React en el sitio.
++ **React-Hook-Form** para validación del formulario.
++ **React-Router** para la configuración de rutas.
++ **React-Toastify** para la creación de las alertas en el sitio.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Uso e instalación del proyecto
+Descarga el código desde el repositorio de GitHub. Asegúrate de tener el archivo "package.json" para poder instalar todas las dependencias que posee esta aplicación. Si ya lo tienes, dentro de la terminal escribe "npm i" para que se agreguen de forma automática.
+Una vez instaladas, procede a escribir en la terminal "npm start" para comenzar a correr la aplicación de React. Si todo está bien, se te abrirá automáticamente una pestaña nueva donde verás la tienda en cuestión, con la dirección [**http://localhost:3000/**](localhost:3000)

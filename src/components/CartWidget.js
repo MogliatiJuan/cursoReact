@@ -2,8 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useCarrito } from "./CustomProvider";
 
 const CartWidget = () => {
-
-  const { cantidadProducto } = useCarrito()
+  const { cantidadProducto } = useCarrito();
 
   return (
     <NavLink to="/cart">

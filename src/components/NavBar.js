@@ -14,13 +14,12 @@ const NavBar = (props) => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                 <Link to="/category/clothing">Ropa W&M</Link>
-                {/* <Link to="/category/women's clothing">Ropa de mujer</Link> */}
                 <Link to="/category/jewelery">Joyeria</Link>
                 <Link to="/category/electronics">Electronica</Link>
                 </Nav>
             </Navbar.Collapse>
             </Container>
-            <CartWidget/>
+            <CartWidget />
         </Navbar>
         );
     } else {

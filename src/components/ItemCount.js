@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { useCarrito } from "./CustomProvider";
 
-const ItemCount = ({detalleProductos}) => {
-
-    const { setTotalProductos, agregarProducto } = useCarrito()
+const ItemCount = ({ detalleProductos }) => {
+    const { setTotalProductos, agregarProducto } = useCarrito();
 
     const [contador, setContador] = useState(1);
 
     const handleSumar = () => {
-    if (contador < detalleProductos.stock) {
-            setContador(contador + 1);
+        if (contador < detalleProductos.stock) {
+        setContador(contador + 1);
         }
     };
 
@@ -18,10 +17,9 @@ const ItemCount = ({detalleProductos}) => {
     };
 
     const handleConfirmar = () => {
-        // onAdd(contador)
-        agregarProducto(detalleProductos, contador)
-        setTotalProductos(contador)
-    }
+        agregarProducto(detalleProductos, contador);
+        setTotalProductos(contador);
+    };
 
     return (
         <div>

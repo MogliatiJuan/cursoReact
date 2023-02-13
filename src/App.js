@@ -1,5 +1,5 @@
-import "react-toastify/dist/ReactToastify.css"
-import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
 import CustomProvider from "./components/CustomProvider";
 import Footer from "./components/Footer";
@@ -15,7 +15,7 @@ const App = () => {
         <Main />
         <Footer />
       </BrowserRouter>
-      <ToastContainer/>
+      <ToastContainer />
     </CustomProvider>
   );
 };
