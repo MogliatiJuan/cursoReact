@@ -24,3 +24,6 @@ Hola! En este documento encontrarás la información relacionada a la tienda gen
 ## Uso e instalación del proyecto
 Descarga el código desde el repositorio de GitHub. Asegúrate de tener el archivo "package.json" para poder instalar todas las dependencias que posee esta aplicación. Si ya lo tienes, dentro de la terminal escribe "npm i" para que se agreguen de forma automática.
 Una vez instaladas, procede a escribir en la terminal "npm start" para comenzar a correr la aplicación de React. Si todo está bien, se te abrirá automáticamente una pestaña nueva donde verás la tienda en cuestión, con la dirección [**http://localhost:3000/**](localhost:3000)
+
+## Deploy
+Accediento a este [enlace](https://precious-lokum-e955ca.netlify.app/) podrás ver el proyecto ya desplegado en Netlify.
