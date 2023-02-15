@@ -15,7 +15,18 @@ const App = () => {
         <Main />
         <Footer />
       </BrowserRouter>
-      <ToastContainer />
+      <ToastContainer 
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover
+        theme="dark"
+        />
     </CustomProvider>
   );
 };

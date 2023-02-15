@@ -14,9 +14,9 @@ Hola! En este documento encontrarás la información relacionada a la tienda gen
 * Una vez complete todos los datos, clickee en "Enviar Pedido" y su pedido será enviado a la tienda, que le brindará su ID de compra, sus datos y un ID de seguimiento.
 
 ## Tecnologías utilizadas
-+ **Bootstrap** para añadir estilos al sitio.
++ **SASS** para añadir estilos propios al sitio.
 + **Firebase** para la gestión de datos.
-+ **React-Bootstrap** para la creación de componentes React en el sitio.
++ **React-Bootstrap** para la creación de componentes React con estilo en el sitio.
 + **React-Hook-Form** para validación del formulario.
 + **React-Router** para la configuración de rutas.
 + **React-Toastify** para la creación de las alertas en el sitio.

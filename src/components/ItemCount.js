@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useCarrito } from "./CustomProvider";
+import { Button, ToggleButton } from "react-bootstrap";
 
-const ItemCount = ({ detalleProductos }) => {
-    const { setTotalProductos, agregarProducto } = useCarrito();
-
+const ItemCount = ({ stock, confirmarCantidad }) => {
+    const [checked, setChecked] = useState(false);
     const [contador, setContador] = useState(1);
 
     const handleSumar = () => {
-        if (contador < detalleProductos.stock) {
+        if (contador < stock) {
         setContador(contador + 1);
         }
     };
@@ -17,17 +16,37 @@ const ItemCount = ({ detalleProductos }) => {
     };
 
     const handleConfirmar = () => {
-        agregarProducto(detalleProductos, contador);
-        setTotalProductos(contador);
+        confirmarCantidad(contador);
     };
 
     return (
-        <div>
-        <button onClick={handleSumar}>+</button>
-        <p>Cantidad: {contador}</p>
-        <button onClick={handleRestar}>-</button>
-        <button onClick={handleConfirmar}>Agregar al carrito</button>
-        </div>
+        <>
+            <div className="btnCount">
+                <Button 
+                variant="outline-dark" 
+                hidden={contador === stock} 
+                onClick={handleSumar}>+</Button>{' '}
+                <p>Cantidad: {contador}</p> 
+                <Button 
+                variant="outline-dark" 
+                hidden={contador <= 1} 
+                onClick={handleRestar}>-</Button>
+            </div>
+            <div>
+                <ToggleButton
+                    className="mb-2"
+                    id="toggle-check"
+                    type="checkbox"
+                    variant="outline-primary"
+                    checked={checked}
+                    value="1"
+                    onChange={(e) => setChecked(e.currentTarget.checked)}
+                    onClick={handleConfirmar}
+                >
+                    Confirmar cantidad
+                </ToggleButton>
+            </div>
+        </>
     );
 };
 

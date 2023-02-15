@@ -35,7 +35,7 @@ export const useCarrito = () => {
         return carrito.find((producto) => producto.id === id);
     };
 
-    const cantidadProducto = (producto) => {
+    const cantidadProducto = () => {
         let cantidad = 0;
         carrito.forEach((producto) => {
         cantidad = cantidad + producto.cantidad;
