@@ -20,6 +20,7 @@ Hola! En este documento encontrarás la información relacionada a la tienda gen
 + **React-Hook-Form** para validación del formulario.
 + **React-Router** para la configuración de rutas.
 + **React-Toastify** para la creación de las alertas en el sitio.
++ **React-Loader-Spinner** para la creación del loader mientras cargan los productos.
 
 ## Uso e instalación del proyecto
 Descarga el código desde el repositorio de GitHub. Asegúrate de tener el archivo "package.json" para poder instalar todas las dependencias que posee esta aplicación. Si ya lo tienes, dentro de la terminal escribe "npm i" para que se agreguen de forma automática.

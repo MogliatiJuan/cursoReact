@@ -83,34 +83,46 @@ const Carrito = () => {
 
     return (
         <>
-            <div className="carritoCargado">
-                <h1 hidden={carrito.length === 0 || idPedido !== ""}>
-                Estas por finalizar tu pedido en nuestra pagina.
-                </h1>
-                {carrito.length === 0 && <p className="advertenciaNoProductos">Aun no agregaste productos al carrito</p>}
-
-                {carrito.map((producto) => {
-                    return (
-                        <Card hidden={idPedido !== ""} key={producto.title}>
-                        <Card.Img
-                            variant="top"
-                            src={producto.image}
-                            alt={producto.title}
-                        />
-                        <Card.Body>
-                            <Card.Title>{producto.title}</Card.Title>
-                            <Card.Text>Precio: {producto.price}</Card.Text>
-                            <Card.Text>Descripcion: {producto.description}</Card.Text>
-                            <Card.Text>Categoria: {producto.category}</Card.Text>
-                            <Card.Text>Cantidad: {producto.cantidad}</Card.Text>
-                            <Card.Text>Subtotal: {subTotal(producto)}</Card.Text>
-                        </Card.Body>
-                        </Card>
-                    );
-                })}
-                <Button className="vaciarCarrito" variant="outline-danger" hidden={carrito.length === 0 || idPedido !== ""} onClick={vaciarCarrito}>Vaciar Carrito</Button>{' '}
-                {carrito.length !== 0 && <p className="totalAPagar">Total: $ {totalAPagar()} </p>}
-            </div>
+        <div className="carritoCargado">
+            <h1 hidden={carrito.length === 0 || idPedido !== ""}>
+            Estas por finalizar tu pedido en nuestra pagina.
+            </h1>
+            {carrito.length === 0 && (
+            <p className="advertenciaNoProductos">
+                Aun no agregaste productos al carrito
+            </p>
+            )}
+            {carrito.map((producto) => {
+            return (
+                <Card hidden={idPedido !== ""} key={producto.title}>
+                <Card.Img
+                    variant="top"
+                    src={producto.image}
+                    alt={producto.title}
+                />
+                <Card.Body>
+                    <Card.Title>{producto.title}</Card.Title>
+                    <Card.Text>Precio: {producto.price}</Card.Text>
+                    <Card.Text>Descripcion: {producto.description}</Card.Text>
+                    <Card.Text>Categoria: {producto.category}</Card.Text>
+                    <Card.Text>Cantidad: {producto.cantidad}</Card.Text>
+                    <Card.Text>Subtotal: {subTotal(producto)}</Card.Text>
+                </Card.Body>
+                </Card>
+            );
+            })}
+            <Button
+            className="vaciarCarrito"
+            variant="outline-danger"
+            hidden={carrito.length === 0 || idPedido !== ""}
+            onClick={vaciarCarrito}
+            >
+            Vaciar Carrito
+            </Button>{" "}
+            {carrito.length !== 0 && (
+            <p className="totalAPagar">Total: $ {totalAPagar()} </p>
+            )}
+        </div>
         {showForm ? (
             <form onSubmit={handleSubmit(onSubmit)} className="formulario">
             <input
@@ -167,16 +179,20 @@ const Carrito = () => {
                 value="Enviar pedido"
                 hidden={carrito.length === 0}
             />
-            <label hidden={carrito.length !== 0}>Agrega productos al carrito para poder completar tu orden</label>
+            <label hidden={carrito.length !== 0}>
+                Agrega productos al carrito para poder completar tu orden
+            </label>
             </form>
         ) : (
             <div className="compraFinalizada">
-                <p className="idCompra">ID de la compra: {idPedido} </p>
-                <p>Nombre: {usuario.firstName}</p>
-                <p>Apellido: {usuario.lastName}</p>
-                <p>Telefono: {usuario.phoneNumber}</p>
-                <p>Email: {usuario.email}</p>
-                <p className="codigoSeguimiento">Codigo seguimiento: {generateTrackID()} </p>
+            <p className="idCompra">ID de la compra: {idPedido} </p>
+            <p>Nombre: {usuario.firstName}</p>
+            <p>Apellido: {usuario.lastName}</p>
+            <p>Telefono: {usuario.phoneNumber}</p>
+            <p>Email: {usuario.email}</p>
+            <p className="codigoSeguimiento">
+                Codigo seguimiento: {generateTrackID()}{" "}
+            </p>
             </div>
         )}
         </>

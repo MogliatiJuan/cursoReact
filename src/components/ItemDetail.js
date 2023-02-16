@@ -5,18 +5,17 @@ import { useCarrito } from "./CustomProvider";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ detalleProductos }) => {
-
   const { setTotalProductos, agregarProducto } = useCarrito();
-  const [ cantidad, setCantidad ] = useState(0)
+  const [cantidad, setCantidad] = useState(0);
 
   const confirmarCantidad = (contador) => {
-      setCantidad(contador)
-  }
+    setCantidad(contador);
+  };
 
   const handleAddCart = () => {
     agregarProducto(detalleProductos, cantidad);
     setTotalProductos(cantidad);
-  }
+  };
 
   return (
     <div className="detalleProducto">
@@ -32,10 +31,19 @@ const ItemDetail = ({ detalleProductos }) => {
           <Card.Text>Descripcion: {detalleProductos.description}</Card.Text>
           <Card.Text>Stock: {detalleProductos.stock}</Card.Text>
           <Card.Text>Categoria: {detalleProductos.category}</Card.Text>
-        </Card.Body>  
+        </Card.Body>
       </Card>
-      <ItemCount stock={detalleProductos.stock} confirmarCantidad={confirmarCantidad} />
-      <Button variant="outline-info" hidden={cantidad === 0} onClick={handleAddCart}>Añadir al carrito</Button>{' '}
+      <ItemCount
+        stock={detalleProductos.stock}
+        confirmarCantidad={confirmarCantidad}
+      />
+      <Button
+        variant="outline-info"
+        hidden={cantidad === 0}
+        onClick={handleAddCart}
+      >
+        Añadir al carrito
+      </Button>{" "}
     </div>
   );
 };

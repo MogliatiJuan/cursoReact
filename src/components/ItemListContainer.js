@@ -1,5 +1,6 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { Rings } from "react-loader-spinner";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { db } from "./firebase";
@@ -37,15 +38,27 @@ const ItemListContainer = () => {
         toast.dismiss();
         toast.success("Productos cargados");
       })
-      .catch((err) => {
+      .catch(() => {
         toast.error("Hubo un error con la base de datos, intente mas tarde.");
       });
   }, [props.category]);
 
   return (
     <div className="greeting">
-      {load ? null : "Cargando..."}
-      <ItemList productos={productos} />
+      {load ? (
+        <ItemList productos={productos} />
+      ) : (
+        <Rings
+          height="150"
+          width="150"
+          color="#17E7B7"
+          radius="50"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="rings-loading"
+        />
+      )}
     </div>
   );
 };
