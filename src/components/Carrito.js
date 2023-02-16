@@ -52,6 +52,7 @@ const Carrito = () => {
             .then((res) => {
             toast.success("pedido enviado");
             setIdPedido(res.id);
+            vaciarCarrito();
             })
             .catch(() => {
             toast.error("Hubo un incoveniente con su pedido, intente de nuevo.");
@@ -87,11 +88,15 @@ const Carrito = () => {
             <h1 hidden={carrito.length === 0 || idPedido !== ""}>
             Estas por finalizar tu pedido en nuestra pagina.
             </h1>
-            {carrito.length === 0 && (
-            <p className="advertenciaNoProductos">
-                Aun no agregaste productos al carrito
+            <p
+            className="advertenciaNoProductos"
+            hidden={carrito.length !== 0 || idPedido !== ""}
+            >
+            Aun no agregaste productos al carrito!
             </p>
-            )}
+            <h3 hidden={idPedido === ""}>
+            Gracias por comprar en nuestra tienda. Vuelva pronto!
+            </h3>
             {carrito.map((producto) => {
             return (
                 <Card hidden={idPedido !== ""} key={producto.title}>

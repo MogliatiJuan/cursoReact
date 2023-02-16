@@ -129,6 +129,10 @@ body {
               }
             }
           }
+
+          .card:hover{
+            cursor: pointer;
+          }
         }
       }
 
@@ -175,6 +179,7 @@ body {
 
         .card:hover {
           box-shadow: 0 6px 10px #51e5a1;
+          cursor: pointer;
         }
 
         .btnCount {
@@ -225,6 +230,31 @@ body {
           text-shadow: 2px 2px #17e7b748;
           border: 2px solid #51e5a1;
           padding: 1rem;
+        }
+
+        > h3 {
+          color: #51e5a1;
+          font-size: 1.5em;
+          font-weight: bold;
+          text-align: center;
+          margin-top: 2em;
+          position: relative;
+          border: 2px solid transparent;
+          background: linear-gradient(90deg, #51e5a1, #51e5a1) no-repeat;
+          background-size: 0% 100%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: textFill 2s linear forwards;
+        }
+        
+        @keyframes textFill {
+          0% {
+            background-size: 0% 100%;
+          }
+          100% {
+            background-size: 100% 100%;
+          }
         }
 
         .totalAPagar {
