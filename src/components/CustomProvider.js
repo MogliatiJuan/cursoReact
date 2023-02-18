@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { toast } from "react-toastify";
 
 const contexto = createContext();
 const Provider = contexto.Provider;
@@ -27,6 +28,9 @@ export const useCarrito = () => {
     };
 
     const vaciarCarrito = () => {
+        toast.warning("Haz vaciado el carrito con éxito", {
+        icon: () => <span class="material-icons">delete_sweep</span>,
+        });
         setCarrito([]);
         setTotalProductos(0);
     };

@@ -12,7 +12,9 @@ const ItemDetailContainer = () => {
   const [detalleProductos, setDetalleProductos] = useState({});
 
   useEffect(() => {
-    toast.info("Cargando producto...");
+    toast.info("Cargando producto...", {
+      icon: () => <span className="material-icons">sync</span>,
+    });
 
     const productosCollection = collection(db, "productos");
     const referencia = doc(productosCollection, params.id);
@@ -21,14 +23,18 @@ const ItemDetailContainer = () => {
     pedidoFirebase
       .then((respuesta) => {
         toast.dismiss();
-        toast.success("Producto cargado");
+        toast.success("Producto cargado", {
+          icon: () => <span className="material-icons">backup</span>,
+        });
         const productoFirebase = respuesta.data();
         productoFirebase.id = respuesta.id;
         setDetalleProductos(productoFirebase);
         setLoad(true);
       })
       .catch(() => {
-        toast.error("Producto no cargado");
+        toast.error("El producto no ha podido cargarse", {
+          icon: () => <span className="material-icons">sync_problem</span>,
+        });
       });
   }, [params.id]);
 

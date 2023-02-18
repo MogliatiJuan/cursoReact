@@ -13,7 +13,9 @@ const ItemListContainer = () => {
   const props = useParams();
 
   useEffect(() => {
-    toast.info("Cargando productos");
+    toast.info("Cargando productos", {
+      icon: () => <span className="material-icons">sync</span>,
+    });
     const productosCollection = collection(db, "productos");
     let pedidoFirestore;
 
@@ -36,10 +38,14 @@ const ItemListContainer = () => {
         setProductos(productosFirestore);
         setLoad(true);
         toast.dismiss();
-        toast.success("Productos cargados");
+        toast.success("Productos cargados", {
+          icon: () => <span className="material-icons">backup</span>,
+        });
       })
       .catch(() => {
-        toast.error("Hubo un error con la base de datos, intente mas tarde.");
+        toast.error("Hubo un error con la base de datos, intente mas tarde.", {
+          icon: () => <span className="material-icons">sync_problem</span>,
+        });
       });
   }, [props.category]);
 

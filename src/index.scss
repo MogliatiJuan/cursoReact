@@ -70,6 +70,21 @@ body {
       justify-content: space-evenly;
       flex-grow: 1;
 
+      .pageNotFound {
+        .row {
+          .col {
+            .fade {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              background-color: #51e5a1;
+              color: #0a261f;
+              border-color: #0a261f;
+            }
+          }
+        }
+      }
+
       .greeting {
         display: flex;
         flex-flow: row wrap;
@@ -110,8 +125,7 @@ body {
 
               a {
                 color: #0a261f;
-                display: inline-block;
-                position: relative;
+                display: flex;
                 padding: 8px 15px;
                 font-size: 16px;
                 font-weight: 500;
@@ -120,6 +134,10 @@ body {
                 background-color: #51e5a1;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 transition: all 0.2s ease-in-out;
+
+                span {
+                  margin-right: 5px;
+                }
               }
 
               a:hover {
@@ -130,7 +148,8 @@ body {
             }
           }
 
-          .card:hover{
+          .card:hover {
+            box-shadow: 0 6px 10px #51e5a1;
             cursor: pointer;
           }
         }
@@ -143,7 +162,7 @@ body {
         align-items: center;
 
         .card {
-          margin: 20px 0;
+          margin: 20px;
           width: 30rem;
           display: flex;
           flex-direction: column;
@@ -212,6 +231,10 @@ body {
             color: #0a261f;
           }
         }
+
+        .agregarAlCarrito {
+          margin: 10px;
+        }
       }
 
       .loaderSpinner {
@@ -247,7 +270,7 @@ body {
           -webkit-text-fill-color: transparent;
           animation: textFill 2s linear forwards;
         }
-        
+
         @keyframes textFill {
           0% {
             background-size: 0% 100%;
@@ -258,7 +281,11 @@ body {
         }
 
         .totalAPagar {
-          margin: 1rem 0.5rem;
+          margin: 1rem auto;
+          max-width: 25rem;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
           color: #51e5a1;
           border: 2px solid #51e5a1;
           border-radius: 10px;
@@ -266,42 +293,77 @@ body {
           font-weight: bold;
           padding: 1rem;
           text-align: center;
+
+          > span {
+            font-size: 3rem;
+            margin-right: 5px;
+          }
         }
 
         .vaciarCarrito {
-          margin: 10px;
+          margin: 10px auto;
+          display: flex;
+
+          > span {
+            margin-right: 5px;
+          }
         }
 
-        .card {
-          background-color: #c6cfd1;
-          margin: 10px;
+        .productosEnCarrito {
+          display: flex;
+          flex-flow: column wrap;
+          width: 60rem;
+          margin: 0 auto;
 
-          > img {
-            mix-blend-mode: multiply;
-            max-height: 300px;
-            object-fit: contain;
-          }
+          .card {
+            background-color: #c6cfd1;
+            margin: 10px;
+            flex-direction: row;
 
-          .card-body {
-            border-radius: 10px;
-            padding: 20px 0 5px 20px;
-
-            .card-title {
-              font-size: 1.5rem;
-              margin-bottom: 10px;
-              font-weight: bold;
+            > img {
+              margin: 0 5px;
+              mix-blend-mode: multiply;
+              max-height: 10rem;
+              max-width: 7rem;
+              object-fit: contain;
+              align-self: center;
             }
 
-            .card-text {
-              margin-bottom: 5px;
-            }
+            .card-body {
+              display: flex;
+              flex-flow: row wrap;
+              gap: 1rem;
+              max-height: 13rem;
+              overflow: hidden;
+              text-align: center;
+              justify-content: center;
+              align-content: center;
 
-            .card-text:last-child {
-              font-weight: bold;
-            }
+              .card-title {
+                font-size: 1rem;
+                font-weight: bold;
+                width: 11rem;
+                margin: auto;
+              }
 
-            .card-text:nth-child(3) {
-              text-transform: capitalize;
+              .card-text {
+                max-width: 7rem;
+                display: flex;
+                align-items: center;
+                text-align: center;
+              }
+
+              .card-text:last-child {
+                font-weight: bold;
+              }
+
+              .card-text:nth-child(3) {
+                text-transform: capitalize;
+                overflow-y: scroll;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+              }
             }
           }
         }

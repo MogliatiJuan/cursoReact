@@ -50,21 +50,33 @@ const Carrito = () => {
 
         pedidoFirebase
             .then((res) => {
-            toast.success("pedido enviado");
+            toast.success("pedido enviado", {
+                icon: () => <span className="material-icons">done_all</span>,
+            });
             setIdPedido(res.id);
             vaciarCarrito();
             })
             .catch(() => {
-            toast.error("Hubo un incoveniente con su pedido, intente de nuevo.");
+            toast.error("Hubo un incoveniente con su pedido, intente de nuevo.", {
+                icon: () => (
+                <span className="material-icons">production_quantity_limits</span>
+                ),
+            });
             });
         }
     }, [usuario]);
 
     const onSubmit = (formData) => {
         if (formData.email !== formData.emailVerification) {
-        toast.info("Los email no son iguales");
+        toast.info("Los email no son iguales", {
+            icon: () => (
+            <span className="material-icons">notification_important</span>
+            ),
+        });
         } else {
-        toast.success("Informacion enviada");
+        toast.success("Informacion enviada", {
+            icon: () => <span className="material-icons">send</span>,
+        });
         setUsuario(formData);
         setShowForm(false);
         }
@@ -97,35 +109,41 @@ const Carrito = () => {
             <h3 hidden={idPedido === ""}>
             Gracias por comprar en nuestra tienda. Vuelva pronto!
             </h3>
+            <div className="productosEnCarrito">
             {carrito.map((producto) => {
-            return (
+                return (
                 <Card hidden={idPedido !== ""} key={producto.title}>
-                <Card.Img
+                    <Card.Img
                     variant="top"
                     src={producto.image}
                     alt={producto.title}
-                />
-                <Card.Body>
+                    />
+                    <Card.Body>
                     <Card.Title>{producto.title}</Card.Title>
                     <Card.Text>Precio: {producto.price}</Card.Text>
                     <Card.Text>Descripcion: {producto.description}</Card.Text>
                     <Card.Text>Categoria: {producto.category}</Card.Text>
                     <Card.Text>Cantidad: {producto.cantidad}</Card.Text>
                     <Card.Text>Subtotal: {subTotal(producto)}</Card.Text>
-                </Card.Body>
+                    </Card.Body>
                 </Card>
-            );
+                );
             })}
+            </div>
             <Button
             className="vaciarCarrito"
             variant="outline-danger"
             hidden={carrito.length === 0 || idPedido !== ""}
             onClick={vaciarCarrito}
             >
+            <span class="material-icons">remove_shopping_cart</span>
             Vaciar Carrito
             </Button>{" "}
             {carrito.length !== 0 && (
-            <p className="totalAPagar">Total: $ {totalAPagar()} </p>
+            <p className="totalAPagar">
+                <span class="material-icons">shopping_cart_checkout</span>
+                Total: $ {totalAPagar()}{" "}
+            </p>
             )}
         </div>
         {showForm ? (

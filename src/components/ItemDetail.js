@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+import { toast } from "react-toastify";
 import { useCarrito } from "./CustomProvider";
 import ItemCount from "./ItemCount";
 
@@ -13,6 +14,9 @@ const ItemDetail = ({ detalleProductos }) => {
   };
 
   const handleAddCart = () => {
+    toast.success("Producto agregado al carrito", {
+      icon: () => <span class="material-icons">add_shopping_cart</span>,
+    });
     agregarProducto(detalleProductos, cantidad);
     setTotalProductos(cantidad);
   };
@@ -38,6 +42,7 @@ const ItemDetail = ({ detalleProductos }) => {
         confirmarCantidad={confirmarCantidad}
       />
       <Button
+        className="agregarAlCarrito"
         variant="outline-info"
         hidden={cantidad === 0}
         onClick={handleAddCart}

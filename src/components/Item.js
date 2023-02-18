@@ -10,7 +10,9 @@ const Item = ({ producto }) => {
         <Card.Body>
           <Card.Title>{producto.title}</Card.Title>
           <Card.Text>Price: {producto.price}</Card.Text>
-          <Link to={"/item/" + producto.id}>Ver mas informacion</Link>
+          <Link to={"/item/" + producto.id}>
+            <span class="material-icons">read_more</span>Ver mas información
+          </Link>
         </Card.Body>
       </Card>
     </article>

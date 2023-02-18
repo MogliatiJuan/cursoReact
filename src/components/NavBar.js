@@ -56,7 +56,7 @@ const NavBar = (props) => {
             </Container>
             <div className="text-center mt-3">
             <p>
-                &copy; {new Date().getFullYear()} Tu Sitio. Todos los derechos
+                &copy; {new Date().getFullYear()} E-Commerce. Todos los derechos
                 reservados.
             </p>
             </div>
